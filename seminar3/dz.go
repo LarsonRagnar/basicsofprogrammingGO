@@ -80,6 +80,7 @@ OuterLoop:
 				fmt.Println(url.tags)
 				fmt.Println(url.date)
 			}
+			fmt.Println(len(urlList))
 		case 'r':
 			if err := keyboard.Close(); err != nil {
 				log.Fatal(err)
