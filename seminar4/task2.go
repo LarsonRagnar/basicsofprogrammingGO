@@ -13,7 +13,7 @@ type Operator interface {
 	Transactions() []Tx
 }
 
-var ErrNegativeValue = errors.New("negative value")
+var ErrNegativeValue = errors.New("negative value") // сами ошибки и структура с ошибаками
 
 var _ error = (*WithdrawError)(nil)
 
@@ -64,7 +64,7 @@ func (t *txOperator) Balance() int64 {
 	return total
 }
 
-func (t *txOperator) Withdraw(amount int64) error {
+func (t *txOperator) Withdraw(amount int64) error { // обрабатываем ошибочки
 	balance := t.Balance()
 	if balance-amount < 0 {
 		return WithdrawError{Need: amount, Have: balance}
