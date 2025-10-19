@@ -21,6 +21,18 @@ func sort(k []int) []int {
 	return k
 }
 
+func sortBuble(k []int) []int {
+	for i := 0; i < len(k); i++ {
+		for j := i + 1; j < len(k); j++ {
+			if k[i] > k[j] {
+				k[i], k[j] = k[j], k[i]
+			}
+		}
+	}
+	return k
+
+}
+
 func main() {
 	arr = [5]int{5, 2, 8, 1, 9}
 	arr1 = [4]int{8, 5, 6, 4}
@@ -33,4 +45,6 @@ func main() {
 	copy(newArr[len(slice1):], slice2)
 
 	fmt.Println(sort(newArr))
+	fmt.Println(sortBuble(newArr))
+
 }
