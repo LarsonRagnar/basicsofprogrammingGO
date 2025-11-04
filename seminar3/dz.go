@@ -74,12 +74,12 @@ OuterLoop:
 			// Дата: <дата>
 
 			// Напишите свой код здесь
-			for _, url := range urlList {
-				fmt.Println(url.name)
-				fmt.Println(url.url)
-				fmt.Println(url.tags)
-				fmt.Println(url.date)
-			}
+			// for _, url := range urlList {
+			// 	fmt.Println(url.name)
+			// 	fmt.Println(url.url)
+			// 	fmt.Println(url.tags)
+			// 	fmt.Println(url.date)
+			// }
 			fmt.Println(len(urlList))
 		case 'r':
 			if err := keyboard.Close(); err != nil {
