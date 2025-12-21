@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"io"
 	"os"
 )
 
@@ -13,11 +12,18 @@ func main() {
 		return
 	}
 	defer f.Close()
-	buf := make([]byte, 256)
-	if _, err := io.ReadFull(f, buf); err != nil {
+	// buf := make([]byte, 256)
+	// if _, err := io.ReadFull(f, buf); err != nil {
+	// 	fmt.Println("Не смог прочитать последовательность байтов из файла", err)
+	// 	return
+	// }
+	// fmt.Printf("%s\n", buf)
+	buf := make([]byte, 128)
+	_, err = f.Read(buf)
+	if err != nil {
 		fmt.Println("Не смог прочитать последовательность байтов из файла", err)
 		return
 	}
-	fmt.Printf("%s\n", buf)
+	fmt.Println(string(buf))
 
 }
