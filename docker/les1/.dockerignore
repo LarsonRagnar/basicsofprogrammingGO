@@ -1,0 +1,33 @@
+# Игнорируем ненужные файлы для уменьшения контекста сборки
+.git
+.gitignore
+README.md
+*.md
+.env
+.env.local
+
+# Игнорируем уже собранные бинарники
+server
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Игнорируем тестовые файлы
+*_test.go
+test/
+tests/
+
+# Игнорируем временные файлы
+*.tmp
+*.log
+.DS_Store
+Thumbs.db
+
+# Игнорируем IDE файлы
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
